@@ -1,0 +1,1 @@
+Invoke-Command -Credential domain\user -ComputerName (Get-Content D:\Powershell\computernames.txt) -ScriptBlock {Get-CimInstance -ClassName Win32_Product -Filter "name like '%virtualbox%'" | Invoke-CimMethod -MethodName Uninstall}
